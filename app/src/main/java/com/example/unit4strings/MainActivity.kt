@@ -27,5 +27,13 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        addButton = findViewById(R.id.add_btn)
+        compareButton = findViewById(R.id.compare_btn)
+        vowelCountButton = findViewById(R.id.vowel_cnt_btn)
+        resultView = findViewById(R.id.result)
+        string1 = findViewById(R.id.string1)
+        string2 = findViewById(R.id.string2)
+
     }
 }
