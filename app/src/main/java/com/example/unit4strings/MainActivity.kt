@@ -45,6 +45,10 @@ class MainActivity : AppCompatActivity() {
         compareButton.setOnClickListener {
             setResultField(compareStrings())
         }
+
+        vowelCountButton.setOnClickListener {
+            setResultField(countVowels())
+        }
     }
 
     private fun setResultField(data: String) {
@@ -73,6 +77,24 @@ class MainActivity : AppCompatActivity() {
             "Matching"
         } else {
             "Not Matching"
+        }
+    }
+
+    private fun countVowels(): Int {
+        val val1 = getValueOne()
+        val val2 = getValueTwo()
+        //create one string from the two input strings
+        val s = val1 + val2
+        //iterate over every character in the string
+        val count = 0
+        for (int i=0; i<s.length; i++) run {
+            val c: Char = s.charAt(i)
+            //if a character is a vowel, add 1 to a count variable
+            if (c == 'a' || c == 'i' || c == 'o' || c == 'e' || c == 'u') {
+                count += 1
+            }
+
+            return count
         }
     }
 }
