@@ -1,5 +1,6 @@
 package com.example.unit4strings
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -18,6 +19,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var string1: EditText
     private lateinit var string2: EditText
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -35,5 +37,42 @@ class MainActivity : AppCompatActivity() {
         string1 = findViewById(R.id.string1)
         string2 = findViewById(R.id.string2)
 
+        addButton.setOnClickListener {
+            //resultView.text = string1.getText().toString() + " " + string2.getText().toString()
+            setResultField(addStrings())
+        }
+
+        compareButton.setOnClickListener {
+            setResultField(compareStrings())
+        }
+    }
+
+    private fun setResultField(data: String) {
+        resultView.text = data.toString()
+    }
+
+    private fun getValueOne(): String {
+        return string1.getText().toString()
+    }
+
+    private fun getValueTwo(): String {
+        return string2.getText().toString()
+
+    }
+
+    private fun addStrings(): String {
+        val val1 = getValueOne()
+        val val2 = getValueTwo()
+        return val1 + " " + val2
+    }
+
+    private fun compareStrings(): String {
+        val val1 = getValueOne()
+        val val2 = getValueTwo()
+        return if (val1 == val2) {
+            "Matching"
+        } else {
+            "Not Matching"
+        }
     }
 }
