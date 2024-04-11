@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">unit4 Strings</string>
+    <string name="label1">String1</string>
+    <string name="hint">Enter a string</string>
+    <string name="label2">String2</string>
+    <string name="label_add_btn">Add Strings</string>
+    <string name="label_compare_btn">Compare Strings</string>
+    <string name="label_vowel_cnt_btn">Count Vowels</string>
+    <string name="result_placeholder">result</string>
 </resources>
