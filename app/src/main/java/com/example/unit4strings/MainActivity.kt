@@ -80,21 +80,19 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun countVowels(): Int {
+    private fun countVowels(): String {
         val val1 = getValueOne()
         val val2 = getValueTwo()
         //create one string from the two input strings
-        val s = val1 + val2
+        val chars = (val1 + val2).toCharArray()
         //iterate over every character in the string
-        val count = 0
-        for (int i=0; i<s.length; i++) run {
-            val c: Char = s.charAt(i)
+        var count = 0
+        for (c in chars) {
             //if a character is a vowel, add 1 to a count variable
-            if (c == 'a' || c == 'i' || c == 'o' || c == 'e' || c == 'u') {
+            if (c == 'a' || c == 'A' || c == 'i' || c == 'I' || c == 'o' || c == 'O' || c == 'e' || c == 'E' || c == 'u' || c == 'U') {
                 count += 1
             }
-
-            return count
         }
+        return count.toString()
     }
 }
